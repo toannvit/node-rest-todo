@@ -1,6 +1,7 @@
 const http = require('http');
 const bodyParser = require('body-parser');
  module.exports = () => {
+     require('dotenv').config();
     const app = require('express')();
     
     app.use(require('morgan')('dev'));
