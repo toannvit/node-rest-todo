@@ -1,6 +1,5 @@
-# my-angular-app
+# Simple Todo List API
 
-Simple Todo List API
 
 ## Endpoint
 
@@ -31,7 +30,7 @@ DELETE : /api/v1/list/:listId : Delete  list by ID
 
 
 
---Events 
+--Events--
 
 GET : /api/v1/events : Get events of all list
 
