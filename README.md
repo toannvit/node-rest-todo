@@ -11,12 +11,12 @@ GET : /api/v1/list/:listId : Get list by ID
 
 POST : /api/v1/list : Create list
 
-PATCH : /api/v1/list/:listId : Update list by ID
+PATCH : /api/v1/list/:listId : Update list
 
-DELETE : /api/v1/list/:listId : Delete  list by ID
+DELETE : /api/v1/list/:listId : Delete list
 
 
----Todo---
+---Todos---
 
 GET : /api/v1/list/:listId/todos : Get todos of list
 
@@ -24,9 +24,9 @@ GET : /api/v1/list/:listId/todos/:todoId : Get todo by ID
 
 POST : /api/v1/list/:listId/todos : Create todo
 
-PATCH : /api/v1/list/:listId : Update todo
+PATCH : /api/v1/list/:listId/todos/:todoId : Update todo
 
-DELETE : /api/v1/list/:listId : Delete  list by ID
+DELETE : /api/v1/list/:listId/todos/:todoId : Delete todo
 
 
 
