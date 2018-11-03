@@ -3,6 +3,7 @@ services:
   app:
       container_name: 'docker-node-mongo'
       restart: always
+      command: npm start
       build: .
       ports:
-        - '80:3000'
+        - '8080:8080'

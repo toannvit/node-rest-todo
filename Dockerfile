@@ -1,13 +1,13 @@
 FROM node:9
 
+RUN mkdir -p /usr
+
 WORKDIR /usr
 
-COPY package*.json ./
+COPY . /usr
+
+EXPOSE 8080
 
 RUN npm install
 
-COPY . .
-
-EXPOSE 3000
-
-CMD ["npm" , "start"]
+CMD ["npm", "start"]
