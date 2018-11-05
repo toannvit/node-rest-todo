@@ -3,12 +3,8 @@ const actions = require('./events.actions');
 const router = express.Router();
 
 
-router.get('/' , actions.v1.getList);
+router.get('/' , actions.v1.getTodoEvents);
 
-router.get('/:listId' , actions.v1.getListByID);
-
-router.get('/:listId/:todoId' , actions.v1.getTodoByID);
-
-
+router.get('/:todoId' , actions.v1.getTodoEventByID);
 
 module.exports = router;

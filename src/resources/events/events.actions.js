@@ -1,16 +1,14 @@
-const List = require('../../models/list');
 const Todo = require('../../models/todo');
 
 const actions = {
     v1: {
-        getList: getList,
-        getListByID: getListByID,
-        getTodoByID: getTodoByID
+        getTodoEvents: getTodoEvents,
+        getTodoEventByID: getTodoEventByID
     }
 }
 
-function getList(req,res,next) {
-    List.find({ status: { $gt: 0 } })
+function getTodoEvents(req,res,next) {
+    Todo.find({ status: { $gt: 0 } })
     .select('_id name events')
     .then(docs => {
         res.status(200).json({
@@ -24,9 +22,9 @@ function getList(req,res,next) {
     });
 }
 
-function getListByID (req,res,next) {
-    const id = req.params.listId;
-    List.findOne({_id: id, status: { $gt: 0 } })
+function getTodoEventByID (req,res,next) {
+    const id = req.params.todoId;
+    Todo.findOne({_id: id, status: { $gt: 0 } })
     .select('_id name events')
     .then(docs => {
         res.status(200).json({
