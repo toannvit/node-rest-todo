@@ -3,37 +3,23 @@
 
 ## Endpoint
 
----LIST---
-
-GET : /api/v1/list : Get multiple list
-
-GET : /api/v1/list/:listId : Get list by ID
-
-POST : /api/v1/list : Create list
-
-PATCH : /api/v1/list/:listId : Update list
-
-DELETE : /api/v1/list/:listId : Delete list
-
-
 ---Todos---
 
-GET : /api/v1/list/:listId/todos : Get todos of list
+GET : /api/v1/todos : Get todos
 
-GET : /api/v1/list/:listId/todos/:todoId : Get todo by ID
+GET : /api/v1/todos/:todoId : Get todo by ID
 
-POST : /api/v1/list/:listId/todos : Create todo
+POST : /api/v1/todos : Create todo
 
-PATCH : /api/v1/list/:listId/todos/:todoId : Update todo
+PATCH : /api/v1/todos/:todoId : Update todo
 
-DELETE : /api/v1/list/:listId/todos/:todoId : Delete todo
-
+DELETE : /api/v1/todos/:todoId : Delete todo
 
 
 --Events--
 
-GET : /api/v1/events : Get events of all list
+GET : /api/v1/events : Get events of todos
 
-GET : /api/v1/events/:listId : Get events of particular list
+GET : /api/v1/events/:todoId  : Get events of a particular todo
 
-GET : /api/v1/events/:listId/:todoId  : Get events of particular todo in a list
+
