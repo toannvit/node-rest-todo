@@ -8,7 +8,7 @@ const actions = {
 }
 
 function getTodoEvents(req,res,next) {
-    Todo.find({ status: { $gt: 0 } })
+    Todo.find()
     .select('_id name events')
     .then(docs => {
         res.status(200).json({
@@ -23,14 +23,15 @@ function getTodoEvents(req,res,next) {
 }
 
 function getTodoEventByID (req,res,next) {
-    const id = req.params.todoId;
-    Todo.findOne({_id: id, status: { $gt: 0 } })
+    const todoId = req.params.todoId;
+    Todo.findOne({ _id: todoId})
     .select('_id name events')
-    .then(docs => {
-        res.status(200).json({
-            count: docs.length,
-            items: docs
-        })
+    .then(doc => {
+        if (doc) {
+            res.status(200).json(doc);
+        } else {
+            res.status(404).json({ message: 'No valid entry found for provided ID' });
+        }
     }).catch(error => {
         res.status(500).json({
             error

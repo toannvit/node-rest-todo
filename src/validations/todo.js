@@ -1,6 +1,6 @@
 const Joi = require('joi');
 module.exports = {
-    createList: {
+    createTodo: {
         body: {
             name: Joi.string().required()
         }

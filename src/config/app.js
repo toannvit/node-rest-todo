@@ -1,5 +1,6 @@
 const http = require('http');
 const bodyParser = require('body-parser');
+const validation =require('express-validation');
  module.exports = () => {
      require('dotenv').config();
     const app = require('express')();
@@ -24,10 +25,14 @@ const bodyParser = require('body-parser');
     app.use(apiBasePath, require('../resources/index'));
 
     app.use((error, req, res, next) => {
-        res.status(error.status || 500);
-        res.json({
-            error: error.message || 'Internal Server Error'
-        });
+        if (error instanceof validation.ValidationError) {
+            res.status(error.status).json(error);
+        } else {
+            res.status(error.status || 500);
+            res.json({
+                error: error.message || 'Internal Server Error'
+            });
+        }
     });
     return http.createServer(app);
 }

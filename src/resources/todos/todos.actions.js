@@ -1,4 +1,4 @@
-const Todo = require('../../../models/todo');
+const Todo = require('../../models/todo');
 const mongoose = require('mongoose');
 const actions = {
     v1: {
@@ -46,7 +46,6 @@ function createTodo(req, res, next) {
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         description: req.body.description,
-        list: doc._id,
         events: [
             {
                 _id: new mongoose.Types.ObjectId(),
