@@ -1,6 +1,6 @@
 const express = require('express');
 const actions = require('./todos.actions');
-const router = express.Router({ mergeParams: true });
+const router = express.Router();
 
 
 router.get('/', actions.v1.getTodos);

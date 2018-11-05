@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.use('/list', require('./list/list.routes'));
+router.use('/todos', require('./todos/todos.routes'));
 
 router.use('/events', require('./events/events.routes'));
 
