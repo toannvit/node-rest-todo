@@ -20,10 +20,6 @@ const todoSchema = mongoose.Schema({
         type: Boolean,
         default: false
     },
-    list: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'List'
-    },
     events: [
         {
             _id: mongoose.Schema.Types.ObjectId,
